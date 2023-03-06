@@ -46,3 +46,5 @@ I hope to find someone who wants to help me!!!
 # Contribute
 
 The project has officially started, any form of contribution is welcome (improvement suggestions, contributions to the code, graphic proposals for the app and so on).
+
+This is the **main** project, it contains only documentation, there will be different sub-projects, one for API, one for web client, one for mobile app etc...
