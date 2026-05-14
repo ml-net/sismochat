@@ -55,5 +55,4 @@ Key design choices:
 The project has officially started, any form of contribution is welcome (improvement suggestions, contributions to the code, graphic proposals for the app and so on).
 
 Check the sub-projects for open issues and contributing guidelines:
-- [sismochat_api - open issues](https://github.com/ml-net/sismochat_api/issues)
-- [sismochat_api - CONTRIBUTING.md](https://github.com/ml-net/sismochat_api/blob/main/CONTRIBUTING.md)
+- in sismochat_api - [open issues](https://github.com/ml-net/sismochat_api/issues) - [CONTRIBUTING.md](https://github.com/ml-net/sismochat_api/blob/main/CONTRIBUTING.md)
