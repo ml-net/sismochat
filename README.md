@@ -4,6 +4,8 @@
 
 **SiSMoChat** is an instant messaging App, designed with an eye to children, who on the one hand are digital natives but at the same time are less trained in terms of safety.
 
+Read the [story behind this project](HISTORY.md).
+
 # The idea
 
 Why not create a messaging app that reaches these goals?
@@ -28,23 +30,30 @@ We can finish with an obvious availability of Emoji (possibly enriched with othe
 
 # Technical implementation
 
-The ideal solution is a fully decentralized architecture, where every device is free to reach out and interact with each other.
+The architecture follows a **message relay** pattern: the server holds messages temporarily until the recipient downloads them, then deletes them. The client is the source of truth for message history - no persistent data stays on the server.
 
-The simplest solution is a completely centralized architecture (a classic `client/server`) where a single server (or a group of them) manages users and messages.
+Key design choices:
+- **E2E encryption** (RSA) - the server cannot read message content
+- **Privacy by design** - messages are deleted after download, with a TTL for undelivered ones
+- **Parental control** - contacts must be approved by a parent before children can exchange messages
+- **Single device** - each child account is paired to one device at a time
 
-I think a good compromise, perhaps one I can develop with reasonable effort, is described as follows:
+## Sub-projects
 
-- a server (one or more, it doesn't matter at the moment) that owns the list and availability of users (parent and child)
-- multiple clients (mobile app or web app) that do the dirty work :smiley: : sending and receiving messages (for child side) and managing child profiles (for parent side)
+| Component | Tech | Repo | Status |
+|-----------|------|------|--------|
+| Server API | Node.js / Express / SQLite | [sismochat_api](https://github.com/ml-net/sismochat_api) | [latest release](https://github.com/ml-net/sismochat_api/releases/latest) |
+| Client | TBD | TBD | Planned |
 
-I would like to start coding the server side as a REST API, with Node.js, to expose an interface for clients to create users and send messages.
+# Project status
 
-The second step will be to create a client that uses these APIs to send and receive messages.
-
-I hope to find someone who wants to help me!!!
+- ✅ **API** - Message Relay MVP ([latest release](https://github.com/ml-net/sismochat_api/releases/latest))
+- 🔲 Client POC - next milestone
 
 # Contribute
 
 The project has officially started, any form of contribution is welcome (improvement suggestions, contributions to the code, graphic proposals for the app and so on).
 
-This is the **main** project, it contains only documentation, there will be different sub-projects, one for API, one for web client, one for mobile app etc...
+Check the sub-projects for open issues and contributing guidelines:
+- [sismochat_api - open issues](https://github.com/ml-net/sismochat_api/issues)
+- [sismochat_api - CONTRIBUTING.md](https://github.com/ml-net/sismochat_api/blob/main/CONTRIBUTING.md)
