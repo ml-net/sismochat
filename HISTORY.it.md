@@ -57,7 +57,7 @@ Ma l'idea si era evoluta nella mia testa. Non riguardava più solo *lui* — rig
 Una sera di maggio 2026, mi sono seduto alla scrivania senza un piano particolare. Ho aperto il repo. Ho letto il file HISTORY — *le mie stesse parole di tre anni prima* — e qualcosa è scattato.
 
 ```
-Basta pensare. Inizia a costruire.
+Fatti, non parole!
 ```
 
 Quello che è seguito è stato un intenso periodo di lavoro concentrato. Il server ha preso forma in settimane — pezzo dopo pezzo, strato dopo strato, fino a poter fare quello che avevo immaginato anni prima: inoltrare messaggi in modo sicuro, senza mai leggerli, senza conservarli più del necessario.
