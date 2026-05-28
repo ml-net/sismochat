@@ -1,58 +1,98 @@
-# SISMOCHAT
+# SiSMoChat
 
-## Simple and Secure Mobile Chat
+**Simple and Secure Mobile Chat**
 
-**SiSMoChat** is an instant messaging App, designed with an eye to children, who on the one hand are digital natives but at the same time are less trained in terms of safety.
+A messaging app designed for children — no SIM required, end-to-end encrypted, parent-controlled.
 
-Read the [story behind this project](HISTORY.md).
+> *"Dad, do you remember that app to send messages to my friends? You haven't done it anymore?"*
 
-# The idea
+Read the [full story](HISTORY.md) behind this project.
 
-Why not create a messaging app that reaches these goals?
+---
 
-- SIM not needed
-- User's safety and privacy guarantee
-- Control by a supervisor
+## What is SiSMoChat?
 
-Hence the idea behind this project: to create a messaging app that is not linked to the presence of a SIM (but simply to the availability of a network connection), which guarantees the privacy of messages and of the user, in consideration of the delicacy of the target of the same, and above all that it allows a control by a supervisor.
+SiSMoChat is an instant messaging platform where:
 
-## Children but not only
+- 🔒 **Messages are end-to-end encrypted** — the server cannot read them
+- 👨‍👩‍👧 **Parents control contacts** — children can only message approved connections
+- 📱 **No SIM needed** — works on any device with WiFi
+- 🛡️ **Privacy by design** — messages are relayed, not stored permanently
+- 📲 **Installable as an app** — PWA, works on any device
 
-Replacing **child** with _end user_ and **parent** with _supervisor_ extends the potential of the tool, but at the moment the reference universe is that of `a chat for children controlled by parents`.
+Replace *child* with *end user* and *parent* with *supervisor*, and the tool extends beyond families — but the primary goal is **a safe chat for children, controlled by parents**.
 
-# The solution
+---
 
-How can this control be manifested? Leaving aside the obvious possibility of reading messages (this is not the goal and initially it is not foreseen as a function, even if it could still be possible) I imagined the action of adding contacts delegated to the parent's approval: not leaving the freedom to exchange messages with anyone but only with validated (and therefore known) accounts.
+## Architecture
 
-Adding (in the first steps) the inhibition of image and URL exchange, the aspects guaranteeing privacy and security are safe; restricting the installation of the App on a single device at a time (for the child profile, at least in a first version), we can complete the recipe with an encryption applied to the messages in order to make them visible in clear text only to the two terminals of the conversation.
+```
+┌─────────────┐         ┌─────────────┐         ┌─────────────┐
+│   Client A  │◄───────►│   API Server │◄───────►│   Client B  │
+│   (PWA)     │  HTTPS  │   (Relay)    │  HTTPS  │   (PWA)     │
+└─────────────┘   +WS   └─────────────┘   +WS   └─────────────┘
+```
 
-We can finish with an obvious availability of Emoji (possibly enriched with other features such as stickers or other) and perhaps the app could be interesting and attractive.
+- **Server** = temporary message relay (not a persistent store)
+- **Client** = source of truth for messages (local storage)
+- **Encryption** = RSA key pairs per device, server sees only ciphertext
+- **Notifications** = WebSocket (real-time) + Web Push (background)
 
-# Technical implementation
+---
 
-The architecture follows a **message relay** pattern: the server holds messages temporarily until the recipient downloads them, then deletes them. The client is the source of truth for message history - no persistent data stays on the server.
-
-Key design choices:
-- **E2E encryption** (RSA) - the server cannot read message content
-- **Privacy by design** - messages are deleted after download, with a TTL for undelivered ones
-- **Parental control** - contacts must be approved by a parent before children can exchange messages
-- **Single device** - each child account is paired to one device at a time
-
-## Sub-projects
+## Components
 
 | Component | Tech | Repo | Status |
 |-----------|------|------|--------|
-| Server API | Node.js / Express / SQLite | [sismochat_api](https://github.com/ml-net/sismochat_api) | [latest release](https://github.com/ml-net/sismochat_api/releases/latest) |
-| Client | TBD | TBD | Planned |
+| Server API | Node.js, Express, SQLite | [sismochat_api](https://github.com/ml-net/sismochat_api) | ✅ [v0.10.0](https://github.com/ml-net/sismochat_api/releases/latest) |
+| Client | Vue 3, Vite, Tailwind, PWA | [sismochat_client](https://github.com/ml-net/sismochat_client) | 🚧 In development |
+| Client POC | Vanilla JS (archived) | [sismochat_web](https://github.com/ml-net/sismochat_web) | 📦 Archived |
 
-# Project status
+---
 
-- ✅ **API** - Message Relay MVP ([latest release](https://github.com/ml-net/sismochat_api/releases/latest))
-- 🔲 Client POC - next milestone
+## Features
 
-# Contribute
+### ✅ Server (released)
+- Parent/child account management
+- Contact discovery and connection approval
+- Text, emoji, sticker, and audio (PTT) messaging
+- E2E encryption (RSA)
+- Multi-device support with key management
+- Client-seeded state recovery (DB-less resilience)
+- Web Push notifications
+- Rate limiting and security hardening
 
-The project has officially started, any form of contribution is welcome (improvement suggestions, contributions to the code, graphic proposals for the app and so on).
+### 🚧 Client (in progress)
+- Vue 3 + Tailwind + PrimeVue
+- PWA (installable, offline-capable)
+- Service Worker with push notifications
+- Internationalization (IT/EN)
 
-Check the sub-projects for open issues and contributing guidelines:
-- in sismochat_api - [open issues](https://github.com/ml-net/sismochat_api/issues) - [CONTRIBUTING.md](https://github.com/ml-net/sismochat_api/blob/main/CONTRIBUTING.md)
+### 📋 Planned
+- Authentication UI
+- Parent dashboard
+- Chat interface with E2E encryption
+- Capacitor wrapper for app stores (future)
+
+---
+
+## Project Status
+
+The API is **feature-complete and deployed**. The client is in active development — milestone v0.1.0 (project foundation) is nearly complete.
+
+**Live API:** https://sismochat-api.onrender.com
+
+---
+
+## Contributing
+
+Contributions are welcome! Check the sub-projects for open issues and guidelines:
+
+- **API** — [open issues](https://github.com/ml-net/sismochat_api/issues) · [CONTRIBUTING.md](https://github.com/ml-net/sismochat_api/blob/main/CONTRIBUTING.md)
+- **Client** — [open issues](https://github.com/ml-net/sismochat_client/issues) · [CONTRIBUTING.md](https://github.com/ml-net/sismochat_client/blob/main/CONTRIBUTING.md)
+
+---
+
+## License
+
+Both server and client are licensed under [GNU AGPL v3.0](https://www.gnu.org/licenses/agpl-3.0.html).
