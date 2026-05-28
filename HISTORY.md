@@ -1,3 +1,5 @@
+🇮🇹 *[Leggilo in italiano](HISTORY.it.md)*
+
 # Birth of the idea
 
 ## Preface

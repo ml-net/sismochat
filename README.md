@@ -6,7 +6,7 @@ A messaging app designed for children — no SIM required, end-to-end encrypted,
 
 > *"Dad, do you remember that app to send messages to my friends? You haven't done it anymore?"*
 
-Read the [full story](HISTORY.md) behind this project.
+Read the [full story](HISTORY.md) behind this project. 🇮🇹 [Leggila in italiano](HISTORY.it.md).
 
 ---
 
