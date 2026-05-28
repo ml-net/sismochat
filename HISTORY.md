@@ -73,3 +73,7 @@ But every time I push a commit, I think of that moment: a child opening the Mess
 The app may serve other children, other families, other contexts. But it started with him, and it carries that intention in every line of code.
 
 The drawer is empty now. The idea lives in the open.
+
+---
+
+← [Back to project overview](README.md)

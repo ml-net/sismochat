@@ -73,3 +73,7 @@ Ma ogni volta che faccio un push, penso a quel momento: un bambino che apre l'ap
 L'app potrà servire altri bambini, altre famiglie, altri contesti. Ma è partita da lui, e porta quell'intenzione in ogni riga di codice.
 
 Il cassetto è vuoto adesso. L'idea vive all'aperto.
+
+---
+
+← [Torna alla panoramica del progetto](README.md)
