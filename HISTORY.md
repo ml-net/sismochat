@@ -58,9 +58,9 @@ One evening in May 2026, I sat down at my desk with no particular plan. I opened
 Enough thinking. Start building.
 ```
 
-What followed was an intense burst of focused work. The API came together in weeks — authentication, messaging, encryption, push notifications. Ten versions, each one adding a layer. Tests, documentation, architecture decisions. The server became real: a working message relay, end-to-end encrypted, privacy-first.
+What followed was an intense burst of focused work. The server came together in weeks — piece by piece, layer by layer, until it could do what I had imagined years earlier: relay messages securely, without ever reading them, without storing them longer than necessary.
 
-Now the client is taking shape. Vue 3, a PWA that installs like a native app, push notifications that work in the background. The pieces are falling into place.
+Now the client is taking shape. An app that installs on any device, works offline, notifies you when a message arrives. The pieces are falling into place.
 
 ## Today
 
