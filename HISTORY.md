@@ -34,7 +34,7 @@ Do you remember that app to send messages to my friends? Do you haven't done it 
 ```
 Leaving me again with my thoughts, and this time I decided to take it out of the drawer and put it into practice.
 
-Or at least… I will try!
+Or at least… I had to try.
 
 ---
 
