@@ -27,10 +27,10 @@ Replace *child* with *end user* and *parent* with *supervisor*, and the tool ext
 ## Architecture
 
 ```
-┌─────────────┐         ┌─────────────┐         ┌─────────────┐
-│   Client A  │◄───────►│   API Server │◄───────►│   Client B  │
-│   (PWA)     │  HTTPS  │   (Relay)    │  HTTPS  │   (PWA)     │
-└─────────────┘   +WS   └─────────────┘   +WS   └─────────────┘
+┌─────────────┐        ┌────────────┐        ┌─────────────┐
+│   Client A  │◄──────►│ API Server │◄──────►│   Client B  │
+│   (PWA)     │ HTTPS  │  (Relay)   │ HTTPS  │   (PWA)     │
+└─────────────┘  +WS   └────────────┘  +WS   └─────────────┘
 ```
 
 - **Server** = temporary message relay (not a persistent store)
@@ -80,7 +80,7 @@ Replace *child* with *end user* and *parent* with *supervisor*, and the tool ext
 
 The API is **feature-complete and deployed**. The client is in active development — milestone v0.1.0 (project foundation) is nearly complete.
 
-**Live API:** https://sismochat-api.onrender.com
+**API Documentation:** https://sismochat-api.onrender.com/doc
 
 ---
 

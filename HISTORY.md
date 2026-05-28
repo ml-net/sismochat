@@ -35,3 +35,39 @@ Do you remember that app to send messages to my friends? Do you haven't done it 
 Leaving me again with my thoughts, and this time I decided to take it out of the drawer and put it into practice.
 
 Or at least… I will try!
+
+---
+
+# From drawer to reality
+
+## The long pause (2023–2026)
+
+I created the repository. I sketched some ideas. And then… life happened.
+
+Work, family, the daily routine — the project sat there, a silent promise in my GitHub profile. I'd open it occasionally, read the README, think "one day", and close the tab. The idea never left me, but the energy to start was always "for tomorrow".
+
+My son grew. He turned 11, then 12, then 13. He got his own phone (with a SIM this time — the world moves on). He discovered WhatsApp, group chats, the whole ecosystem I had wanted to protect him from. In a way, the window for the original use case was closing.
+
+But the idea had evolved in my head. It wasn't just about *him* anymore — it was about the principle. Privacy by design. Parental control without surveillance. A messaging tool that respects its users instead of exploiting them.
+
+## The spark returns (May 2026)
+
+One evening in May 2026, I sat down at my desk with no particular plan. I opened the repo. I read the HISTORY file — *my own words from three years earlier* — and something clicked.
+
+```
+Enough thinking. Start building.
+```
+
+What followed was an intense burst of focused work. The API came together in weeks — authentication, messaging, encryption, push notifications. Ten versions, each one adding a layer. Tests, documentation, architecture decisions. The server became real: a working message relay, end-to-end encrypted, privacy-first.
+
+Now the client is taking shape. Vue 3, a PWA that installs like a native app, push notifications that work in the background. The pieces are falling into place.
+
+## Today
+
+He's 14 now. He has his own digital life, his own choices. He probably doesn't need this app anymore — not in the way the 8-year-old version of him did.
+
+But every time I push a commit, I think of that moment: a child opening the Messages app, typing his friend's name, and believing it would just *work*. That simplicity, that trust — that's what I'm building for.
+
+The app may serve other children, other families, other contexts. But it started with him, and it carries that intention in every line of code.
+
+The drawer is empty now. The idea lives in the open.
